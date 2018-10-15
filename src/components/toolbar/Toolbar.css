@@ -1,11 +1,11 @@
-/* .toolbar {
+.toolbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: rgb(134, 0, 123);
     height: 56px;
-} */
+}
 
 .toolbar__logo {
     margin-left: 1rem;
