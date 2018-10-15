@@ -21,7 +21,8 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-top: 11%;
+    justify-content: flex-start;
 }
 
 .side-drawer-li {
