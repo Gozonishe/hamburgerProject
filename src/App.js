@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import Toolbar from './components/toolbar/Toolbar';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import BackDrop from './components/backDrop/BackDrop';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Users from './components/routes/Users';
-import Products from './components/routes/Products';
+import {YMaps, Map} from 'react-yandex-maps';
+import Contacts from './components/routes/Contacts';
+
 
 class App extends Component {
 state = {
@@ -13,15 +13,15 @@ state = {
 };
 
 
-  drawerToggleClickHandler = () =>{
-    this.setState((prevState)=>{
+  drawerToggleClickHandler = () => {
+    this.setState((prevState)=> {
       return {sideDrawerOpen: !prevState.sideDrawerOpen};
     });
   };
 
   backdropClickHandler = () => {
     this.setState({sideDrawerOpen: false});
-  }; 
+ }; 
 
   render() {
     let backdrop;

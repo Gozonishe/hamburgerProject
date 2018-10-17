@@ -5,6 +5,7 @@ import './Toolbar.css';
 import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
 import Products from '../routes/Products';
 import Users from '../routes/Users';
+import Contacts from '../routes/Contacts';
 
 const toolbar = props => (
     <header className="toolbar">
@@ -19,10 +20,12 @@ const toolbar = props => (
                 <ul>
                     <li><Link to="/Products">Products</Link></li>
                     <li><Link to="/Users">Users</Link></li>
+                    <li><Link to="/Contacts">Contacts</Link></li>
                 </ul>
 
                 <Route path="/Products" component={Products}/>;
                 <Route path="/Users" component={Users} />;
+                <Route path="/Contacts" component={Contacts} />;
             </div>
             </Router>
         </nav>
