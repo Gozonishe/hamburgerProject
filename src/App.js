@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
-
-import Toolbar from './components/toolbar/Toolbar';
-import SideDrawer from './components/sideDrawer/SideDrawer';
-import BackDrop from './components/backDrop/BackDrop';
-import {YMaps, Map} from 'react-yandex-maps';
-import Contacts from './components/routes/Contacts';
-
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import MainPage from './components/mainPage/MainPage';
+import Header from './components/header/Header';
+import Contacts from './components/ContactsPage/Contacts';
+import Login from './components/loginPage/Login';
+import SignUpPage from './components/signUpPage/signUpPage';
 
 class App extends Component {
-state = {
-  sideDrawerOpen: false
-};
-
-
-  drawerToggleClickHandler = () => {
-    this.setState((prevState)=> {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
-    });
-  };
-
-  backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false});
- }; 
-
   render() {
-    let backdrop;
-
-    if (this.state.sideDrawerOpen){
-      backdrop = <BackDrop click={this.backdropClickHandler}/>;
-    }
     return (
-      <div style={{height: '100%'}}>
-        <Toolbar drawerClickHandler = {this.drawerToggleClickHandler}/>
-        <SideDrawer show={this.state.sideDrawerOpen}/>
-        {backdrop}
-        <main style={{marginTop: '64px'}}>
-        <p>This is a page content</p>
-        </main>
-      </div>
+      <Router>
+        <div className='appRoot' >
+          <Header/>
+          <div className='AppWrapper'>
+            <Route exact path='/' component={MainPage} />
+            <Route path='/contacts' component={Contacts} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={SignUpPage} />
+            {/* <Route exact  ath='/asddsasad' component={someCompodsa} /> */}
+          </div>  
+        </div>
+      </Router>
     );
   }
 }

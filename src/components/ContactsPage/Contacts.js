@@ -10,7 +10,7 @@ export default class Contacts extends Component{
         return(
         <div className = "contacts">
             <div className = "contacts_map">
-            <YMaps>
+            <YMaps >
                 <Map state = {mapState}/>
             </YMaps>
             </div>
