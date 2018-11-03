@@ -22,7 +22,7 @@ class ProductList extends Component {
 
   getList() {
     const {productsData} = this.state;
-    return productsData.map(product => <ProductCard {...product}/>)
+    return productsData.map(product => <ProductCard key={product._id} {...product}/>)
   }
 
   render() {

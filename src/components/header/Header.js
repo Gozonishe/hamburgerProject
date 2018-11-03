@@ -51,11 +51,12 @@ class Header extends Component {
               </Menu.Item>
             </Link>
 
-            <Menu.Item
-              name='logout'
-              active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
-            />
+            <Link to='/admin'>
+              <Menu.Item name='admin' active={activeItem === 'admin'} onClick={this.handleItemClick}>
+                Admin
+              </Menu.Item>
+            </Link>
+
           </Menu.Menu>
         </Menu>
       )
