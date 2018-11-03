@@ -19,7 +19,6 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/signup' component={SignUpPage} />
             <Route path='/shop_page' component={ShopPage} />
-            {/* <Route exact  ath='/asddsasad' component={someCompodsa} /> */}
           </div>  
         </div>
       </Router>
