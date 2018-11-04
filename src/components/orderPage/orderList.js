@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getProducts} from '../../AC/products';
 import ProductCard from '../productCard/productCard';
+import { Button } from 'semantic-ui-react';
+
+import axios from 'axios';
 
 class OrderList extends Component {
     constructor(props) {
@@ -14,6 +17,14 @@ class OrderList extends Component {
         getProducts();
   }    
 
+  handleTelegaSend(){
+    axios.get('https://snowstormapi.herokuapp.com/telegram')
+  }
+
+  handleTelegaSendPost = ()=> {
+    axios.post('https://snowstormapi.herokuapp.com/telegram', {text: `Oreder count ${JSON.stringify(this.props.orders)}`})
+  }
+
 
   getList() {
     const {orders} = this.props;
@@ -25,6 +36,8 @@ class OrderList extends Component {
       const { count } = this.props;
     return (
         <div className='main' >
+            <Button onClick={this.handleTelegaSend}>TelegaGET</Button>
+            <Button onClick={this.handleTelegaSendPost}>TelegaPOST</Button>
            <h1> Orders mount: {count}</h1>
            {this.getList()}          
         </div>

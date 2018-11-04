@@ -1,8 +1,8 @@
 import {START,SUCCESS,FAIL} from '../constantce';
 import axios from 'axios';
 
-const UrlByEnv = process.env.NODE_ENV == "development" ? "http://localhost:8080/" : "https://snowstormapi.herokuapp.com/";
-//const UrlByEnv = "https://snowstormapi.herokuapp.com/";
+//const UrlByEnv = process.env.NODE_ENV == "development" ? "http://localhost:8080/" : "https://snowstormapi.herokuapp.com/";
+const UrlByEnv = "https://snowstormapi.herokuapp.com/";
 
 const axiosInstance = axios.create({
     baseURL: UrlByEnv
