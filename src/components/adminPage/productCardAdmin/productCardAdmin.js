@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import { Card, Input, Image, Button, Form } from 'semantic-ui-react'
+import { Card, Input, Image, Button, Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { postProducts } from '../../../AC/products';
 
 class ProductCardAdmin extends Component {
     constructor(props) {
@@ -34,6 +36,15 @@ class ProductCardAdmin extends Component {
             .then(res => console.log(res));
     }
 
+    handlePost = () => {
+        const {postProducts} = this.props;
+        const itemObj= {
+            "name": "ABIBAS23",
+            "price": 992,
+        }
+        postProducts(itemObj);
+    }
+
     render() {
         const { name, price } = this.state
         return (
@@ -61,6 +72,7 @@ class ProductCardAdmin extends Component {
                 </Card.Content>
                 <Card.Content extra>
                 <Button onClick={this.handleClick}>Add to Db via Api</Button>
+                <Button onClick={this.handlePost}>POST VIA REDUX</Button>
                 </Card.Content>
             </Card>
 
@@ -70,4 +82,4 @@ class ProductCardAdmin extends Component {
     )}
 }
 
-export default ProductCardAdmin;
+export default connect(null, { postProducts })(ProductCardAdmin); ;
