@@ -13,6 +13,6 @@ export function postProducts(data){
         type: POST_PRODUCTS,
         callApi: '/products',
         typeOfMethod: 'post',
-        apiData:  { data } 
+        apiData: data 
     }
 }

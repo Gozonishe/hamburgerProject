@@ -9,6 +9,7 @@ import ShopPage from './components/shopPage/shopPage';
 import ShopPageRedux from './components/shopPage/shopPageRedux';
 import AdminPage from './components/adminPage/AdminPage';
 import OrderPage from './components/orderPage/orderPage';
+import OrderPagePro from './components/orderPagePro/orderPagePro';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path='/shop_page' component={ShopPage} />
             <Route path='/shop_page_redux' component={ShopPageRedux} />
             <Route path='/order_page' component={OrderPage} />
+            <Route path='/order_page_pro' component={OrderPagePro} />
           </div>  
         </div>
       </Router>

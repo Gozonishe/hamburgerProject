@@ -25,7 +25,6 @@ class OrderList extends Component {
     axios.post('https://snowstormapi.herokuapp.com/telegram', {text: `Oreder count ${JSON.stringify(this.props.orders)}`})
   }
 
-
   getList() {
     const {orders} = this.props;
     console.log(orders)

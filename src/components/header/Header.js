@@ -50,6 +50,12 @@ class Header extends Component {
 
           <Menu.Menu position='right'>
 
+            <Link to='/order_page_pro'>
+            <Menu.Item name='order_page_pro' active={activeItem === 'order_page_pro'} onClick={this.handleItemClick}>
+                OrderPro
+            </Menu.Item>
+            </Link> 
+
             <Link to='/order_page'>
               <Menu.Item name='order_page' active={activeItem === 'order_page'} onClick={this.handleItemClick}>
                 Order

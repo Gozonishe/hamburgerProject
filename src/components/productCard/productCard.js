@@ -1,7 +1,23 @@
 import React, {Component} from 'react'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
+import {addToCart} from '../../AC/order';
+import { connect } from 'react-redux';
 
 class ProductCard extends Component {
+
+    handleAddToCart = () => {
+        console.log('');
+        const {name, price, _id, addToCart} = this.props;
+        const itemInfo = {
+            name,
+            price,
+            _id,
+        };
+        addToCart(itemInfo); 
+    }
+
+    
+
     render() {
         const {name, price} = this.props;
         return (
@@ -15,10 +31,10 @@ class ProductCard extends Component {
         <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
         </Card.Content>
         <Card.Content extra>
-         <Button>Add to cart</Button>
+         <Button onClick = {this.handleAddToCart}>Add to cart</Button>
         </Card.Content>
   </Card>
     )}
 }
 
-export default ProductCard;
+export default connect(null, {addToCart}) (ProductCard);

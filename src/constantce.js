@@ -12,4 +12,6 @@ export const POST_PRODUCTS = 'POST_PRODUCTS';
 
 // orders
 export const GET_ORDER = 'GET_ORDER';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
