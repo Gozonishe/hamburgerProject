@@ -1,3 +1,4 @@
+// counter
 export const INCREMENT = 'INCREMENT';
 export const UMENSHAEM = 'UMENSHAEM';
 

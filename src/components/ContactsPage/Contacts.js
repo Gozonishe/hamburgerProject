@@ -3,7 +3,7 @@ import {YMaps, Map} from 'react-yandex-maps';
 import { Icon } from 'semantic-ui-react'
 import './Contacts.css'
 
-const mapState = {center: [61.385704, 47.509668], zoom: 10 };
+const mapState = {center: [53.714734, 91.422927], zoom: 18 };
 
 export default class Contacts extends Component{
     render(){
@@ -24,7 +24,7 @@ export default class Contacts extends Component{
               <li><Icon link name='mail' size="big"/>andrey.gozon@gmail.com</li>
               <li><Icon link name='instagram' size="big"/>SnowStorm</li>
               <li><Icon link name='vk' size="big"/>snowstorm-vk</li>
-              <li><Icon link name='map marker alternate' size="big"/></li>
+              <li><Icon link name='map marker alternate' size="big"/>Andrey Travin, Pushkin Street, Kolotushkin 205, Los Angeles</li>
             </ul>
 
         </div>

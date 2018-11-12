@@ -16,7 +16,7 @@ class AdminPage extends Component {
   render() {
     return (
         <div className='admin_page' >
-           <h1>HELLO ADMIN</h1>
+           <ProductCardAdmin name='azazaza' price = '1111'/>
            <ProductCardAdmin name='azazaza' price = '1111'/>
         </div>
     );

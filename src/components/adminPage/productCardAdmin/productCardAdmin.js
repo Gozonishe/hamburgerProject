@@ -6,22 +6,24 @@ import { postProducts } from '../../../AC/products';
 class ProductCardAdmin extends Component {
     constructor(props) {
         super(props);  
-        this.state = { name: '', price: '' }
+        this.state = { name: '', price: '', image: '', info: '' }
       }
 
     handleChange = (e, { name, value }) => this.setState({ [name]: value })  
 
     handleClick = () => {
-        const { name, price } = this.state
+        const { name, price, image, info } = this.state
         console.log('There are some values will be sent');
         const resultObj = {
             'name': name,
             'price': price,
+            'image': image,
+            'info': info,
         }
         console.log(resultObj);
         // todo: change url to the heroku url
         // todo: add ability to add picture
-        fetch('http://localhost:8080/products', {
+        fetch('http://localhost:3000/products', {
         method: 'post',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -30,7 +32,8 @@ class ProductCardAdmin extends Component {
             body: JSON.stringify({
                 name: name,
                 price: price,
-
+                image: image,
+                info: info,
             })
         }).then(res => res.json())
             .then(res => console.log(res));
@@ -46,20 +49,21 @@ class ProductCardAdmin extends Component {
     }
 
     render() {
-        const { name, price } = this.state
+        const { name, price, image, info } = this.state
         return (
             <div>
             <Card>
-                <Image src='https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png' />
+                <Image src='https://cdn10.bigcommerce.com/s-4mcngs/product_images/theme_images/gnu_snowboards_sydney_australia__22375.jpg?t=1541465019' />
                 <Card.Content>
-                <Card.Header>
+                <Card.Description><strong>Add new item in the Shop.</strong></Card.Description><br/>
+                <Card.Meta>
                     <Input 
                     placeholder='name'
                     name='name'
                     value={name}
                     onChange={this.handleChange}
                     />
-                </Card.Header>
+                </Card.Meta>
                 <Card.Meta>
                     <Input 
                         placeholder='price'
@@ -68,16 +72,31 @@ class ProductCardAdmin extends Component {
                         onChange={this.handleChange}
                         />
                 </Card.Meta>
-                <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+                <Card.Meta>
+                    <Input 
+                        placeholder='image'
+                        name='image'
+                        value={image}
+                        onChange={this.handleChange}
+                        />
+                </Card.Meta>
+                <Card.Meta>
+                    <Input 
+                        placeholder='info'
+                        name='info'
+                        value={info}
+                        onChange={this.handleChange}
+                        />
+                </Card.Meta>
                 </Card.Content>
                 <Card.Content extra>
-                <Button onClick={this.handleClick}>Add to Db via Api</Button>
+                <Button onClick={this.handleClick}>Add to Db via Api</Button> 
                 <Button onClick={this.handlePost}>POST VIA REDUX</Button>
                 </Card.Content>
             </Card>
 
         <strong>onChange:</strong>
-        <pre>{JSON.stringify({ name, price }, null, 2)}</pre>
+        <pre>{JSON.stringify({ name, price, image, info }, null, 2)}</pre>
         </div>
     )}
 }

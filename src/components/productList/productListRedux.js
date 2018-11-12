@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getProducts} from '../../AC/products';
 import ProductCard from '../productCard/productCard';
+import "./productListRedux.css";
 
 class ProductListRedux extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class ProductListRedux extends Component {
 
   render() {
     return (
-        <div className='main' >
+        <div className='productList' >
            {this.getList()}
         </div>
     );

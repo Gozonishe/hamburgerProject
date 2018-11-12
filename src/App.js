@@ -5,10 +5,8 @@ import Header from './components/header/Header';
 import Contacts from './components/ContactsPage/Contacts';
 import Login from './components/loginPage/Login';
 import SignUpPage from './components/signUpPage/signUpPage';
-import ShopPage from './components/shopPage/shopPage';
 import ShopPageRedux from './components/shopPage/shopPageRedux';
 import AdminPage from './components/adminPage/AdminPage';
-import OrderPage from './components/orderPage/orderPage';
 import OrderPagePro from './components/orderPagePro/orderPagePro';
 
 class App extends Component {
@@ -23,10 +21,8 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/admin' component={AdminPage} />
             <Route path='/signup' component={SignUpPage} />
-            <Route path='/shop_page' component={ShopPage} />
-            <Route path='/shop_page_redux' component={ShopPageRedux} />
-            <Route path='/order_page' component={OrderPage} />
-            <Route path='/order_page_pro' component={OrderPagePro} />
+            <Route path='/shop_page' component={ShopPageRedux} />
+            <Route path='/cart' component={OrderPagePro} />
           </div>  
         </div>
       </Router>

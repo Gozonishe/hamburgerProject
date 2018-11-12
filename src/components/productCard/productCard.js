@@ -7,34 +7,39 @@ class ProductCard extends Component {
 
     handleAddToCart = () => {
         console.log('');
-        const {name, price, _id, addToCart} = this.props;
+        const {name, price, _id, image, info, addToCart} = this.props;
         const itemInfo = {
             name,
             price,
             _id,
+            image,
+            info,
         };
         addToCart(itemInfo); 
     }
 
-    
-
     render() {
-        const {name, price} = this.props;
+        const {name, price, _id, image, info} = this.props;
+
+        console.log (name, price, image, info);
+
         return (
     <Card>
-        <Image src='https://www.google.ru/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png' />
+        <Image src = {image} height = "300" width = "300" />
         <Card.Content>
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
             <span className='date'>{price} $</span>
         </Card.Meta>
-        <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+        <Card.Description>{info} <br/><br/> id: {_id}</Card.Description>
         </Card.Content>
-        <Card.Content extra>
-         <Button onClick = {this.handleAddToCart}>Add to cart</Button>
+        <Card.Content extra height = "300">
+         <Button className = 'button' onClick = {this.handleAddToCart}>Add to cart</Button>
         </Card.Content>
   </Card>
+  
     )}
+    
 }
 
 export default connect(null, {addToCart}) (ProductCard);
