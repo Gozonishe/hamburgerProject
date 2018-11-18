@@ -1,0 +1,36 @@
+.cartList {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+    align-content: stretch;
+    text-align: center;
+	padding-top: 1rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+}
+
+.order_page_pro {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+    align-content: stretch;
+    text-align: center;
+
+}
+
+.subtotal {
+    margin-left: 20ch;
+    margin-top: 3ch
+}
+
+#itemImage {
+    margin-left: 3rem;
+}
+
+.nameItem {
+    /* text-align: center */
+}

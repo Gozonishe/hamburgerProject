@@ -1,0 +1,17 @@
+.adminPage {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: baseline;
+	align-items: baseline;
+    align-content: stretch;
+    text-align: center;
+    padding-left: 60ch;
+	padding-top: 5ch;
+	margin-top: 4rem;
+}
+
+.controlCard {
+	height: 250px;
+}
+

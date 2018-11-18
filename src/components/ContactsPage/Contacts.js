@@ -14,12 +14,9 @@ export default class Contacts extends Component{
                 <Map state = {mapState}/>
             </YMaps>
             </div>
-        <div className = "contacts_detail">
-
-        <h1>Our Contacts</h1>
-
         <div>
             <ul>
+            <li>Our Contacts:</li><br/>
             <li><Icon link name='call' size="big"/>8-800-555-35-35</li>
               <li><Icon link name='mail' size="big"/>andrey.gozon@gmail.com</li>
               <li><Icon link name='instagram' size="big"/>SnowStorm</li>
@@ -27,7 +24,6 @@ export default class Contacts extends Component{
               <li><Icon link name='map marker alternate' size="big"/>Andrey Travin, Pushkin Street, Kolotushkin 205, Los Angeles</li>
             </ul>
 
-        </div>
         </div>
         </div>
         )

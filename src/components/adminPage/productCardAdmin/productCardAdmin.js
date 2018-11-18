@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Card, Input, Image, Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { postProducts } from '../../../AC/products';
+import '../adminPage.css';
 
 class ProductCardAdmin extends Component {
     constructor(props) {
@@ -39,23 +40,15 @@ class ProductCardAdmin extends Component {
             .then(res => console.log(res));
     }
 
-    handlePost = () => {
-        const {postProducts} = this.props;
-        const itemObj= {
-            "name": "ABIBAS23",
-            "price": 992,
-        }
-        postProducts(itemObj);
-    }
-
     render() {
         const { name, price, image, info } = this.state
         return (
-            <div>
-            <Card>
-                <Image src='https://cdn10.bigcommerce.com/s-4mcngs/product_images/theme_images/gnu_snowboards_sydney_australia__22375.jpg?t=1541465019' />
+            <div className = 'controlCard'>
+            <Card >
+                <Image src='https://cdn10.bigcommerce.com/s-4mcngs/product_images/theme_images/gnu_snowboards_sydney_australia__22375.jpg?t=1541465019' height='140px' width = '300' />
+                <div className = 'controlCard'>
                 <Card.Content>
-                <Card.Description><strong>Add new item in the Shop.</strong></Card.Description><br/>
+                <Card.Description><br/><strong>Add new item in the Shop.</strong></Card.Description><br/>
                 <Card.Meta>
                     <Input 
                     placeholder='name'
@@ -64,7 +57,7 @@ class ProductCardAdmin extends Component {
                     onChange={this.handleChange}
                     />
                 </Card.Meta>
-                <Card.Meta>
+                <Card.Meta >
                     <Input 
                         placeholder='price'
                         name='price'
@@ -89,14 +82,14 @@ class ProductCardAdmin extends Component {
                         />
                 </Card.Meta>
                 </Card.Content>
+                </div>
                 <Card.Content extra>
                 <Button onClick={this.handleClick}>Add to Db via Api</Button> 
-                <Button onClick={this.handlePost}>POST VIA REDUX</Button>
                 </Card.Content>
             </Card>
 
-        <strong>onChange:</strong>
-        <pre>{JSON.stringify({ name, price, image, info }, null, 2)}</pre>
+        {/* <strong>onChange:</strong>
+        <pre>{JSON.stringify({ name, price, image, info }, null, 2)}</pre> */}
         </div>
     )}
 }

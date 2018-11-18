@@ -1,4 +1,4 @@
-import {GET_PRODUCTS,POST_PRODUCTS} from '../constantce';
+import {GET_PRODUCTS,POST_PRODUCTS,DELETE_PRODUCTS} from '../constantce';
 
 export function getProducts(){
     return {
@@ -16,3 +16,12 @@ export function postProducts(data){
         apiData: data 
     }
 }
+
+export function deleteProducts(id){
+    return {
+        type: DELETE_PRODUCTS,
+        callApi: `/products/${id}`,
+        typeOfMethod: 'delete'
+    }
+}
+

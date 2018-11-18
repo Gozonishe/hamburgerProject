@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import './signUpPage.css';
 
 export default class SignUp extends Component{
     render(){
@@ -15,7 +16,7 @@ export default class SignUp extends Component{
             <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' color='teal' textAlign='center'>
-                  <Image src='/logo.png' /> Register your account
+                  <Image src='/manondeck.png' /> Register your account
                 </Header>
                 <Form size='large'>
                   <Segment stacked>
@@ -35,9 +36,6 @@ export default class SignUp extends Component{
                     </Button>
                   </Segment>
                 </Form>
-                <Message info={true}>
-                  SomeMessage
-                </Message>
               </Grid.Column>
             </Grid>
             </div>

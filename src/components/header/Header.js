@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 class Header extends Component {
     state = {}
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
+    getTotalPrice () {
+      const {itemsFromCart} = this.props;
+      const totalPrice = itemsFromCart.reduce((total , item) => total + item.price, 0)
+      if (totalPrice !== 0) {
+        return ': ' + totalPrice + ' $';
+      }
+    }
+
     render() {
       const { activeItem } = this.state
   
       return (
-        <Menu stackable>
+        <Menu fixed='enum top' stackable>
           <Link to='/'>
             <Menu.Item icon='home'>
-              {/* <img src='../../../public/manondeck.ico' /> */}
             </Menu.Item>
           </Link>
 
@@ -32,7 +40,7 @@ class Header extends Component {
 
             <Link to='/cart'>
             <Menu.Item name='order_page_pro' active={activeItem === 'order_page_pro'} onClick={this.handleItemClick}>
-                Cart
+                Cart {this.getTotalPrice()} 
             </Menu.Item>
             </Link> 
 
@@ -71,4 +79,8 @@ class Header extends Component {
   }
   
 
-export default Header;
+  export default connect((state) => {
+    return {
+        itemsFromCart: state.cart.items,
+    }
+}, {}) (Header);

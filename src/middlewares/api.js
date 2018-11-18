@@ -41,5 +41,14 @@ export default store => next => action => {
                 })
                 .then(responseAPI => next({...rest, type: type + SUCCESS, responseAPI}))
                 .catch(error => next({...rest, type: type + FAIL}))
+
+        case 'delete':
+        return axiosInstance.delete(callApi)
+            .then(res => {
+                //   console.log(`--- ${res.status} RESPONSE FROM BD: ${JSON.stringify(res.data)}`);
+                return res.data;
+            })
+            .then(responseAPI => next({...rest, type: type + SUCCESS, responseAPI}))
+            .catch(error => next({...rest, type: type + FAIL}))
     }
 }

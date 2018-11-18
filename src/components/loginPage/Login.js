@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+import './Login.css';
 
 export default class Login extends Component{
     render(){
@@ -16,7 +17,7 @@ export default class Login extends Component{
             <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' color='teal' textAlign='center'>
-                  <Image src='/logo.png' /> Log-in to your account
+                  <Image src='/manondeck.png' /> Log-in to your account
                 </Header>
                 <Form size='large'>
                   <Segment stacked>

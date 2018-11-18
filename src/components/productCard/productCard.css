@@ -1,0 +1,10 @@
+.itemCard{
+    height: 180px;
+    text-align: center;
+}
+
+button{
+    position: center;
+    background-color: blue;
+    
+}

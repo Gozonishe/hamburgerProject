@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import {addToCart} from '../../AC/order';
 import { connect } from 'react-redux';
+import './productCard.css';
 
 class ProductCard extends Component {
 
@@ -26,16 +27,18 @@ class ProductCard extends Component {
         return (
     <Card>
         <Image src = {image} height = "300" width = "300" />
+         <div className = 'itemCard' >
         <Card.Content>
-        <Card.Header>{name}</Card.Header>
+        <Card.Header><strong>{name}</strong></Card.Header>
         <Card.Meta>
             <span className='date'>{price} $</span>
         </Card.Meta>
         <Card.Description>{info} <br/><br/> id: {_id}</Card.Description>
         </Card.Content>
-        <Card.Content extra height = "300">
+        <Card.Content extra height = "300"><br/>
          <Button className = 'button' onClick = {this.handleAddToCart}>Add to cart</Button>
         </Card.Content>
+        </div>
   </Card>
   
     )}
