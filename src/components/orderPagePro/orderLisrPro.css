@@ -20,6 +20,13 @@
     align-content: stretch;
     text-align: center;
 
+    background-image: url('http://www.inn.spb.ru/images/300/DSC100305654.jpg');
+    width: 100vw;
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .subtotal {
@@ -33,4 +40,9 @@
 
 .nameItem {
     /* text-align: center */
+}
+
+#proceedButton {
+    padding: 1.5ch;
+    font-size: 3ch;
 }

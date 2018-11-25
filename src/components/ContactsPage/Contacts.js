@@ -8,8 +8,9 @@ const mapState = {center: [53.714734, 91.422927], zoom: 18 };
 export default class Contacts extends Component{
     render(){
         return(
+            
         <div className = "contacts">
-            <div className = "contacts_map">
+            <div id = "map" >
             <YMaps >
                 <Map state = {mapState}/>
             </YMaps>

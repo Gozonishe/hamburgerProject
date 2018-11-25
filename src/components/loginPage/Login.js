@@ -6,6 +6,7 @@ import './Login.css';
 export default class Login extends Component{
     render(){
         return(
+          <div id='login-background'>
             <div className='login-form'>
             <style>{`
               body > div,
@@ -40,7 +41,7 @@ export default class Login extends Component{
                 </Message>
               </Grid.Column>
             </Grid>
-        </div>
+        </div></div>
             )
         }
     }

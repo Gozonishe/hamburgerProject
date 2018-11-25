@@ -1,3 +1,11 @@
 .sign-up-form{
-    margin-top: 6rem;
+    background-image: url('http://snowboarding.transworld.net/wp-content/blogs.dir/442/files/2014/09/Find-Snowboarding-Aleutians-6.jpg');
+
+    width: 100vw;
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
 }

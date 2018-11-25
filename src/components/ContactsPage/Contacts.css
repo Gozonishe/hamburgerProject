@@ -1,7 +1,13 @@
 .contacts{
-    margin-top: 50px;
     display: flex;
-    margin: 10px, 10px;
+    background-image: url('https://www.central-soelden.com/imagetypes/headerImage/soel_giggijochbahn_winter_03_17_oetztal_tourismus_by_rudi_wyhlidal.jpg');
+
+    width: 100vw;
+    height: 100vh;
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .contacts_detail h1{
@@ -24,8 +30,4 @@ li {
         flex-direction: column;
         align-items: flex-start;
     }
-
-.contacts_map {
-    margin-top: 30rem !important;
-}
 }

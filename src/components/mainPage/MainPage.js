@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {doIncrement, doUmenshit} from '../../AC/index';
 import {getProducts} from '../../AC/products';
 import './mainPage.css';
+import  SimpleSlider from './carousel';
 
 class MainPage extends Component {
 
@@ -16,21 +17,19 @@ class MainPage extends Component {
     const {doUmenshit} = this.props;
     doUmenshit();
   }
-  
+   
   render() {
 
     const {count} = this.props;
 
     return (
-        <div className='mainPage' >
-            <h1>Snow Strorm Snowboarding Store</h1>
-            <h1>Snow Strorm Snowboarding Store</h1>
-            <h1>Snow Strorm Snowboarding Store</h1>
-            <img class = 'mainBackground' src = "https://learnex.com.mx/home/wp-content/uploads/2017/12/snowb.jpg"/> 
-            <Button onClick={this.handleIncrement}>Do Increment</Button>
-            <Button onClick={this.handleReduce}>Do Reduce</Button>
-          <h1>{count}</h1>
-
+        <div className='mainPage' id='mainPage' >
+            {/* <h1></h1>
+            <h1 className='shopName'>Snow Strorm Snowboarding Store</h1> */}
+            {/* <Button onClick={this.handleIncrement}>Do Increment</Button>
+            <Button onClick={this.handleReduce}>Do Reduce</Button> */}
+            {/* <h1>{count}</h1> */}
+            <SimpleSlider/>
         </div>
     );
   }

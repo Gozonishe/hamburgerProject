@@ -52,9 +52,9 @@ render() {
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div className = 'subtotal'> 
                     <h1>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
-                    <Button color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
+                    <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
                     <br/>or<br/>    
-                    <a href = '/signup'>Sign in to turn on 1-Click ordering.</a>
+                    <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
                 </div>    
         </div>
     );
@@ -64,6 +64,6 @@ render() {
 export default connect((state) => {
     return {
         itemsFromCart: state.cart.items,
-        count: state.cart.count,
+        count: state.cart.items.length,
     }
 }, {removeFromCart}) (OrderPagePro);

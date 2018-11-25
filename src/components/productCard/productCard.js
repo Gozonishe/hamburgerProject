@@ -28,6 +28,7 @@ class ProductCard extends Component {
     <Card>
         <Image src = {image} height = "300" width = "300" />
          <div className = 'itemCard' >
+            <div className = 'infoCard' height = '5000'>
         <Card.Content>
         <Card.Header><strong>{name}</strong></Card.Header>
         <Card.Meta>
@@ -35,8 +36,9 @@ class ProductCard extends Component {
         </Card.Meta>
         <Card.Description>{info} <br/><br/> id: {_id}</Card.Description>
         </Card.Content>
-        <Card.Content extra height = "300"><br/>
-         <Button className = 'button' onClick = {this.handleAddToCart}>Add to cart</Button>
+            </div>
+        <Card.Content className='extraContent' extra height = "300">
+         <Button color = 'teal' className = 'button' onClick = {this.handleAddToCart}>Add to cart</Button>
         </Card.Content>
         </div>
   </Card>

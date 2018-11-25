@@ -1,10 +1,17 @@
 .itemCard{
-    height: 180px;
+    height: 200px;
     text-align: center;
+    /* background-image: url('https://orig00.deviantart.net/6043/f/2015/124/6/7/snow_ground_wallpaper_by_paintevil-d8kivsb.png') */
 }
 
 button{
     position: center;
-    background-color: blue;
-    
+}
+
+.extraContent{
+    padding: 2px;
+}
+
+.infoCard {
+    height: 150px;
 }
