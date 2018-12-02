@@ -26,10 +26,10 @@ getList(){
     
     return itemsFromCart.map((item)=>{
         return (
-        <div>
+        <div key={item._id}>
             <h2 className = 'nameItem'>{item.name}</h2>
             <Image id = 'itemImage' src = {item.image} height = '140px' width = '140px' />
-            <h3>Price: {item.price} $</h3>
+            <h2>Price: {item.price} $</h2>
             <Button className = 'delButton' onClick = {() => this.handleRemove(item)}>Delete</Button>
         </div>
         )

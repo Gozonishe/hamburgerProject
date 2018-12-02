@@ -10,9 +10,9 @@ export default class SimpleSlider extends React.Component {
     var settings = {
         dots: true,
         infinite: true,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 4000,
+        // autoplay: true,
+        // speed: 2000,
+        // autoplaySpeed: 4000,
 
 
     };
@@ -21,9 +21,9 @@ export default class SimpleSlider extends React.Component {
       <Slider {...settings}>
         <div className = 'pic1'>
             <img id= 'pic1' src="https://snowbrains.com/wp-content/uploads/2014/01/url-2.jpeg" />
-                <div className = 'logoText'>
+                {/* <div className = 'logoText'>
                     <img src='/logotext.png'/>
-                </div>
+                </div> */}
         </div>
         <div>
             <img id= 'pic2' src="https://www.wagrain-kleinarl.at/website/var/tmp/image-thumbnails/0/744/thumb__lightbox/AP_Shoot2_Flachauwinkl_Rohrbacher16_53.jpeg" />

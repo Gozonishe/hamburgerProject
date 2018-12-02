@@ -10,8 +10,8 @@ class ShopPageRedux extends Component {
 
     return (
         <div className='shop_page' >
-            <h3 id = 'topPlace'>Number of Items: {count}</h3>
-            <h3></h3>
+            <br/>
+            <h2 id = 'topPlace'>Number of Items: {count}</h2>
             <ProductListRedux/>
             <p><a href = "#topPlace" >To the top</a></p>
         </div>

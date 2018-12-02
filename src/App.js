@@ -9,12 +9,39 @@ import OrderPagePro from './components/orderPagePro/orderPagePro';
 import ShopPageRedux from './components/shopPage/shopPageRedux';
 import SignUpPage from './components/signUpPage/signUpPage';
 
+import SideDrawer from './components/sideDrawer/SideDrawer';
+import BackDrop from './components/backDrop/BackDrop';
+
+
 class App extends Component {
+
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () =>{
+    this.setState((prevState)=>{
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen:false});
+  };
+
   render() {
+    let backdrop;
+
+    if (this.state.sideDrawerOpen){
+      backdrop = <BackDrop click={this.backdropClickHandler}/>;
+    }
+
     return (
       <Router>
         <div className='appRoot' >
-          <Header/>
+          <Header drawerClickHandler = {this.drawerToggleClickHandler}/>
+          <SideDrawer show = {this.state.sideDrawerOpen}/>
+          {backdrop}
           <div className='AppWrapper'>
             <Route exact path='/' component={MainPage} />
             <Route path='/contacts' component={Contacts} />

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { getItemsFromLocalStorage } from '../../AC/order';
+
+import './Header.css';
+import DrawerToggleButton from '../sideDrawer/DrawerToggleButton';
 
 class Header extends Component {
     state = {}
@@ -16,10 +20,22 @@ class Header extends Component {
       }
     }
 
+    componentDidMount(){
+      this.props.getItemsFromLocalStorage();
+    }
+
     render() {
       const { activeItem } = this.state
   
       return (
+        <div className='header'>
+        <div className='smallHeader'>
+        <div className='toolbar__toggle-button'>
+          <DrawerToggleButton click={this.props.drawerClickHandler}/>
+        </div>
+        <div className='toolbar__logo'><img src='/logotext.png'/></div>
+        </div>
+        <div className='toolbar__navigation-items'>
         <Menu fixed='enum top' stackable>
           <Link to='/'>
             <Menu.Item icon='home'>
@@ -74,6 +90,8 @@ class Header extends Component {
 
           </Menu.Menu>
         </Menu>
+        </div>
+        </div>
       )
     }
   }
@@ -83,4 +101,4 @@ class Header extends Component {
     return {
         itemsFromCart: state.cart.items,
     }
-}, {}) (Header);
+}, {getItemsFromLocalStorage}) (Header);

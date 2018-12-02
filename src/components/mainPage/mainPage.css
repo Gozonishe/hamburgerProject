@@ -138,3 +138,36 @@
   z-index: 100;
   right: 20px !important;
 }
+
+@media (max-width:768px) {
+  /* #pic1 {
+      width:  100vw;
+      height: 20rem;
+  }
+  #pic2 {
+      width:  100vw;
+      height: 20rem;
+  }
+  #pic3 {
+      width:  100vw;
+      height: 20rem;
+  }
+  #pic4 {
+      width:  100vw;
+      height: 20rem; */
+
+      .root{
+        display: none;
+      }
+
+      .mainPage{
+      background-image: url('https://wallpapershome.com/images/pages/pic_v/17405.jpg');
+
+      min-height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+  }
+}

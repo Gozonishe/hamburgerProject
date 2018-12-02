@@ -1,4 +1,4 @@
-import {GET_ORDER, ADD_TO_CART, REMOVE_FROM_CART} from '../constantce';
+import {GET_ORDER, ADD_TO_CART, REMOVE_FROM_CART, GET_ITEMS_FROM_LOCAL_STORAGE} from '../constantce';
 
 export function getOrder(){
     return {
@@ -20,4 +20,10 @@ export function removeFromCart(id) {
         type: REMOVE_FROM_CART,
         payload: id,
     }
+}
+
+export function getItemsFromLocalStorage() {
+	return {
+		type: GET_ITEMS_FROM_LOCAL_STORAGE,
+	}
 }
