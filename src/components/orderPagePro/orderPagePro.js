@@ -3,7 +3,7 @@ import { Card, Input, Image, Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import {removeFromCart}  from '../../AC/order';
 import './orderLisrPro.css';
-import axios from 'axios';
+import {callTelegram} from '../../AC/telegramSender';
 
 class OrderPagePro extends Component {
 
@@ -38,10 +38,9 @@ getList(){
 }
 
 handleTelegaSendPost = ()=> {
-    axios.post('https://snowstormapi.herokuapp.com/telegram', {text: `Order count ${JSON.stringify(this.getTotalPrice())} $`})
+    const {callTelegram} = this.props;
+    callTelegram({text: `Order count ${JSON.stringify(this.getTotalPrice())} $`});
   }
-
-
 
 render() {
     const {count} = this.props;
@@ -66,4 +65,4 @@ export default connect((state) => {
         itemsFromCart: state.cart.items,
         count: state.cart.items.length,
     }
-}, {removeFromCart}) (OrderPagePro);
+}, {removeFromCart,callTelegram}) (OrderPagePro);

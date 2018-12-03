@@ -11,24 +11,41 @@ const sideDrawer = props =>{
     return (
         <nav className = {drawerClasses}>
         <ul>
-            {/* <li><a href = "/">Home</a></li><br/> */}
             <li>
                 <Link to='/'>
                      Home
                 </Link>
-            </li>
-            <li><a href = "/shop_page">Shop Page</a></li><br/>
-            
+            </li><br/>
+            <li>
+                <Link to='/shop_page'>
+                    Shop Page
+                </Link>
+            </li><br/>
             <li>
                 <Link to='/cart'>
                   Cart
                 </Link>
-            </li>
-
-            <li><a href = "/contacts">Contacts</a></li><br/>
-            <li><a href = "/login">Log-In</a></li><br/>
-            <li><a href = "/signup">Sign-In</a></li><br/>
-            <li><a  href = "/admin">Admin</a></li><br/>
+            </li><br/>
+            <li>
+                <Link to='/contacts'>
+                  Contacts
+                </Link>
+            </li><br/>
+            <li>
+                <Link to='/login'>
+                    Log-In
+                </Link>
+            </li><br/>
+            <li>
+                <Link to='/signup'>
+                    Sign-In
+                </Link>
+            </li><br/>
+            <li>
+                <Link to='/admin'>
+                    Admin
+                </Link>
+            </li><br/>
         </ul>
     </nav>
     );
