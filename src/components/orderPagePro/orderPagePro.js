@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Input, Image, Button, Form } from 'semantic-ui-react';
+import { Card, Input, Image, Button, Form, Item, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import {removeFromCart}  from '../../AC/order';
 import './orderLisrPro.css';
@@ -25,16 +25,21 @@ getList(){
     }
     
     return itemsFromCart.map((item)=>{
-        return (
-        <div key={item._id}>
-            <h2 className = 'nameItem'>{item.name}</h2>
-            <Image id = 'itemImage' src = {item.image} height = '140px' width = '140px' />
-            <h2>Price: {item.price} $</h2>
-            <Button className = 'delButton' onClick = {() => this.handleRemove(item)}>Delete</Button>
-        </div>
+        return ( 
+    <div key={item._id}>
+        <Card id='itemCard'>
+            <Image id = 'itemImage' src={item.image} height = "200" width = "200"/>
+                <Card.Content id = 'itemContent'>
+                    <Card.Header id = 'itemInfo'>{item.info}</Card.Header>
+                    <Card.Description id = 'itemPrice'>{item.price} $</Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <Button className = 'delButton' onClick = {() => this.handleRemove(item)}>Delete</Button>
+                </Card.Content>
+        </Card>
+    </div>
         )
     })
-
 }
 
 handleTelegaSendPost = ()=> {
@@ -49,14 +54,15 @@ render() {
         <div className='order_page_pro' >
             <h1></h1>
             <h1 className = 'cartList'>{this.getList()}</h1>
-                <div className = 'subtotal'> 
+                <div id = 'subtotal'> 
                     <h1>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
                     <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
                     <br/>or<br/>    
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
-                </div>    
+                </div>  
         </div>
     );
+    
   } 
 }
 
