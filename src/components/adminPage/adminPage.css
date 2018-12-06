@@ -1,18 +1,35 @@
 .adminPage {
-	display: flex;
+    display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: baseline;
-	align-items: baseline;
+	justify-content: center;
     align-content: stretch;
     text-align: center;
-    padding-left: 60ch;
-	padding-top: 5ch;
-	margin-top: 4rem;
+	margin-top: 100px;
 	
 }
 
-.controlCard {
+#controlCard {
 	height: 250px;
 }
 
+@media (max-width:768px) {
+	.adminPage{
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1rem;     
+}
+	.adminPage{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		align-items: center;
+	}
+	#deleteCard {
+		margin-top: 240px;
+	}
+	#controlCard{
+		margin-top: 40px;
+	}
+}

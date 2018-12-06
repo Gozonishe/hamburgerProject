@@ -23,10 +23,10 @@ class ProductCardAdminDelete extends Component {
     render() {
         const { _id } = this.state
         return (
-            <div >
+            <div id='deleteCard'>
             <Card>
                 <Image src='http://3.bp.blogspot.com/-hMexSsa26JY/UZOkhPRu-xI/AAAAAAAAHAE/fm0gpc5qsdo/s640/duncan+macpherson+snowboard.jpg' height='140px' width = '300' />
-                <div className = 'controlCard'>
+                <div id = 'controlCard'>
                 <Card.Content>
                 <Card.Description><br/><strong>Remove item from the Shop.</strong></Card.Description><br/>
                 <Card.Meta>

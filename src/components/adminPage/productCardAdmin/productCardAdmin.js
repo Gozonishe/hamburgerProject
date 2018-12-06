@@ -43,7 +43,7 @@ class ProductCardAdmin extends Component {
     render() {
         const { name, price, image, info } = this.state
         return (
-            <div className = 'controlCard'>
+            <div id = 'controlCard'>
             <Card >
                 <Image src='https://cdn10.bigcommerce.com/s-4mcngs/product_images/theme_images/gnu_snowboards_sydney_australia__22375.jpg?t=1541465019' height='140px' width = '300' />
                 <div className = 'controlCard'>

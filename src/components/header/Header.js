@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Image} from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { getItemsFromLocalStorage } from '../../AC/order';
@@ -39,16 +39,15 @@ class Header extends Component {
         <Menu fixed='enum top' stackable>
           <Link to='/'>
             <Menu.Item icon='home'>
+              {/* <img src={'/logotext.png'} size='large'/> */}
             </Menu.Item>
           </Link>
 
           <Link to='/shop_page'>
-            <Menu.Item
-              name='shop_page_redux'
+            <Menu.Item id='logo'
               active={activeItem === 'shop_page_redux'}
               onClick={this.handleItemClick}
             >
-              Shop Page
             </Menu.Item>
           </Link>
 
