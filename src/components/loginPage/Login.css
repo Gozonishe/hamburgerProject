@@ -1,11 +1,24 @@
 .login-form{
-    background-image: url('https://visitgreenland.com/wp-content/uploads/four-snowboarders-from-nuuk-in-greenland-thowing-their-snowboards-in-the-air-photo-by-mads-pihl-1400x933.jpg');
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+    align-content: stretch;
+    text-align: center;
 
-    background-size: cover;
-    background-position: center center;
+    background-image: url('https://visitgreenland.com/wp-content/uploads/four-snowboarders-from-nuuk-in-greenland-thowing-their-snowboards-in-the-air-photo-by-mads-pihl-1400x933.jpg');
+    
+    min-height: 100vh;
     background-attachment: fixed;
-    margin-top: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+#loginForm{
+        margin-top: 12%;
+    }
+
+#logIn{
+    text-shadow: -1px 0 rgb(250, 249, 249), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 254, 254), 0 -1px rgb(253, 253, 253);
+}

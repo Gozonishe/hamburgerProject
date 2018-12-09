@@ -55,7 +55,7 @@ render() {
             <h1></h1>
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div id = 'subtotal'> 
-                    <h1>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
+                    <h1 id='subtotalHeader'>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
                     <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
                     <br/>or<br/>    
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>

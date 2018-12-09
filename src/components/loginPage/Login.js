@@ -15,10 +15,10 @@ export default class Login extends Component{
                 height: 100%;
               }
             `}</style>
-            <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+            <Grid id='loginForm' textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
               <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='teal' textAlign='center'>
-                  <Image src='/manondeck.png' /> Log-in to your account
+                <Header id='logIn'as='h2' textAlign='center'>
+                  <Image src='/manondeck.png' /> Log in to your account
                 </Header>
                 <Form size='large'>
                   <Segment stacked>
@@ -33,6 +33,9 @@ export default class Login extends Component{
         
                     <Button color='teal' fluid size='large'>
                       Login
+                    </Button><br/>
+                    <Button color='teal' fluid size='large' href='/admin'>
+                      Admin
                     </Button>
                   </Segment>
                 </Form>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-const mapState = { center: [57.621489, 39.882587], zoom: 14 };
+const mapState = { center: [43.672550, 40.295703], zoom: 14 };
 
 function YandexMap() {
   return(
@@ -12,7 +12,7 @@ function YandexMap() {
 
             properties={{
               hintContent: 'we are waiting for you here in our shop',
-              balloonContent: 'г. Ярославль, Октябрьский переулок - 555'
+              balloonContent: ''
             }}
           />
         </Map>

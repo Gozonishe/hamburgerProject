@@ -1,11 +1,24 @@
 .sign-up-form{
-    background-image: url('http://snowboarding.transworld.net/wp-content/blogs.dir/442/files/2014/09/Find-Snowboarding-Aleutians-6.jpg');
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+    align-content: stretch;
+    text-align: center;
 
-    width: 100vw;
-    height: 100vh;
+    background-image: url('https://i0.wp.com/www.snowsbest.com/wp-content/uploads/2017/01/shutterstock_319074707.jpg?fit=3494%2C1747&ssl=1');
 
-    background-size: cover;
-    background-position: center center;
+    min-height: 100vh;
     background-attachment: fixed;
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#regHead{
+    text-shadow: -1px 0 rgb(250, 249, 249), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 254, 254), 0 -1px rgb(253, 253, 253);
+}
+
+#signForm{
+    margin-top: 12%;
 }

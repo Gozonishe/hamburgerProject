@@ -33,19 +33,19 @@ const sideDrawer = props =>{
             </li><br/>
             <li>
                 <Link to='/login'>
-                    Log-In
+                    Log In
                 </Link>
             </li><br/>
             <li>
                 <Link to='/signup'>
-                    Sign-In
+                    Sign In
                 </Link>
             </li><br/>
-            <li>
+            {/* <li>
                 <Link to='/admin'>
                     Admin
                 </Link>
-            </li><br/>
+            </li><br/> */}
         </ul>
     </nav>
     );
