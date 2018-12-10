@@ -30,10 +30,10 @@ li {
 }
 
 @media (max-width:768px) {
-	.contacts{
+	/* .contacts{
 		margin-left: auto;
 		margin-right: auto;    
-    }
+    } */
 	.contacts{
 		display: flex;
 		flex-direction: column;
@@ -41,14 +41,15 @@ li {
 		justify-content: space-around;
 		align-items: center;
 	}
-	#deleteCard {
-		margin-top: 240px;
-	}
 	.map{
-		margin-top: 40px;
+        margin-top: 40px;
+        position: relative;
+        margin-left: 10px;
+		margin-right: 10px; 
     }
     .contacts_detail{
         text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0);
-
+        margin-left: 5px;
+		margin-right: 5px;    
     }
 }

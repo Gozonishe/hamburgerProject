@@ -15,10 +15,11 @@ export default class Login extends Component{
                 height: 100%;
               }
             `}</style>
+            {/* <Image id='imgLogo' src='/manondeck.png' /> */}
             <Grid id='loginForm' textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
               <Grid.Column style={{ maxWidth: 450 }}>
                 <Header id='logIn'as='h2' textAlign='center'>
-                  <Image src='/manondeck.png' /> Log in to your account
+                   Log in to your account
                 </Header>
                 <Form size='large'>
                   <Segment stacked>
