@@ -9,7 +9,7 @@ const sideDrawer = props =>{
         drawerClasses = 'side-drawer open';
     }
     return (
-        <nav className = {drawerClasses}>
+        <nav className = {drawerClasses} >
         <ul>
             <li>
                 <Link to='/'>
@@ -18,7 +18,7 @@ const sideDrawer = props =>{
             </li><br/>
             <li>
                 <Link to='/shop_page'>
-                    Shop Page
+                    Shop
                 </Link>
             </li><br/>
             <li>

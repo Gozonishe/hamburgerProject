@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import AdminPage from './components/adminPage/AdminPage';
 import Contacts from './components/ContactsPage/Contacts';
 import Header from './components/header/Header';
@@ -14,7 +14,7 @@ import BackDrop from './components/backDrop/BackDrop';
 
 
 class App extends Component {
-
+  
   state = {
     sideDrawerOpen: false
   };
@@ -43,8 +43,8 @@ class App extends Component {
           <SideDrawer show = {this.state.sideDrawerOpen}/>
           {backdrop}
           <div className='AppWrapper'>
-            <Route exact path='/' component={MainPage} />
-            <Route path='/contacts' component={Contacts} />
+            <Route exact path='/'  component={MainPage} />
+            <Route path='/contacts' component={Contacts} /> 
             <Route path='/login' component={Login} />
             <Route path='/admin' component={AdminPage} />
             <Route path='/signup' component={SignUpPage} />

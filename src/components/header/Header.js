@@ -29,7 +29,7 @@ class Header extends Component {
   
       return (
         <div className='header'>
-        <div className='smallHeader'>
+        <div className='smallHeader' >
         <div className='toolbar__toggle-button'>
           <DrawerToggleButton click={this.props.drawerClickHandler}/>
         </div>

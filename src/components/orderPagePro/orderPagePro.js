@@ -52,7 +52,6 @@ render() {
 
     return (
         <div className='order_page_pro' >
-            <h1></h1>
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div id = 'subtotal'> 
                     <h1 id='subtotalHeader'>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
