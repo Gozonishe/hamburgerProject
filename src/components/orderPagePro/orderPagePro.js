@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Input, Image, Button, Form, Item, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import {removeFromCart}  from '../../AC/order';
+import {removeFromCart, setContact}  from '../../AC/order';
 import './orderLisrPro.css';
 import {callTelegram} from '../../AC/telegramSender';
 
@@ -44,20 +44,27 @@ getList(){
 
 handleTelegaSendPost = ()=> {
     const {callTelegram} = this.props;
-    callTelegram({text: `Order count ${JSON.stringify(this.getTotalPrice())} $`});
+    callTelegram({text: `Order subtotal: ${JSON.stringify(this.getTotalPrice())}$, Customer contact: ${this.props.contacts}`});
   }
 
+  updateInputValue(evt) {
+    this.props.setContact(evt.target.value)
+  }
+ 
 render() {
     const {count} = this.props;
-
     return (
         <div className='order_page_pro' >
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div id = 'subtotal'> 
-                    <h1 id='subtotalHeader'>Subtotal: {this.getTotalPrice()} $ ({count} items)</h1>
+                    <h1 id='subtotalHeader'>Subtotal ({count} items): $<u>{this.getTotalPrice()} </u></h1>
+                    <h2><b>Give us your email or phone:</b></h2>
+                    <Input id='contactInput' icon={<Icon name='truck' inverted circular link />} type="text" onChange={evt => this.updateInputValue(evt)} placeholder = 'Phone number'size="20"/>
+                    <h2>and</h2>
                     <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
                     <br/>or<br/>    
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
+                    
                 </div>  
         </div>
     );
@@ -69,5 +76,6 @@ export default connect((state) => {
     return {
         itemsFromCart: state.cart.items,
         count: state.cart.items.length,
+        contacts: state.orders.contacts, 
     }
-}, {removeFromCart,callTelegram}) (OrderPagePro);
+}, {removeFromCart,callTelegram,setContact}) (OrderPagePro);
