@@ -55,6 +55,7 @@
 #proceedButton {
     padding: 1.5ch;
     font-size: 3ch;
+    margin-top: 1ch; 
 }
 
 h2{
@@ -70,7 +71,7 @@ h2{
 }
 
 #contactInput{
-    text-align:center
+    text-align:center;
 }
 
 .cartList{

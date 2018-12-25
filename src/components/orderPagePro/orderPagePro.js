@@ -59,7 +59,7 @@ render() {
                 <div id = 'subtotal'> 
                     <h1 id='subtotalHeader'>Subtotal ({count} items): $<u>{this.getTotalPrice()} </u></h1>
                     <h2><b>Give us your email or phone:</b></h2>
-                    <Input id='contactInput' icon={<Icon name='truck' inverted circular link />} type="text" onChange={evt => this.updateInputValue(evt)} placeholder = 'Phone number'size="20"/>
+                    <Input id='contactInput' icon={<Icon name='truck' inverted circular link />} type="text" onChange={evt => this.updateInputValue(evt)} placeholder = 'Phone number'size="20"/><br/>
                     <h2>and</h2>
                     <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
                     <br/>or<br/>    

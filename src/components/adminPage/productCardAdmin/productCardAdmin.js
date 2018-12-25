@@ -24,7 +24,7 @@ class ProductCardAdmin extends Component {
         console.log(resultObj);
         // todo: change url to the heroku url
         // todo: add ability to add picture
-        fetch('http://localhost:3000/products', {
+        fetch('https://snowstormapi.herokuapp.com/products', {
         method: 'post',
         headers: {
             'Accept': 'application/json, text/plain, */*',
