@@ -45,6 +45,8 @@ getList(){
 handleTelegaSendPost = ()=> {
     const {callTelegram} = this.props;
     callTelegram({text: `Order subtotal: ${JSON.stringify(this.getTotalPrice())}$, Customer contact: ${this.props.contacts}`});
+
+    window.alert('Thanks, our Manager will contact with You')
   }
 
   updateInputValue(evt) {

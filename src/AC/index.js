@@ -8,6 +8,6 @@ export function doIncrement(){
 
 export function doUmenshit(){
     return {
-        type: UMENSHAEM,
+        type: UMENSHAEM, 
     }
 }

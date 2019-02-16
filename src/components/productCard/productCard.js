@@ -3,6 +3,7 @@ import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import {addToCart} from '../../AC/order';
 import { connect } from 'react-redux';
 import './productCard.css';
+import Popup from "reactjs-popup";
 
 class ProductCard extends Component {
 
@@ -16,8 +17,11 @@ class ProductCard extends Component {
             image,
             info,
         };
-        addToCart(itemInfo); 
-    }
+        addToCart(itemInfo);
+ 
+        window.alert('Item Added to the Cart');
+       
+        }
 
     render() {
         const {name, price, _id, image, info} = this.props;
