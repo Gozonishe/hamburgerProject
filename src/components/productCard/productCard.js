@@ -2,11 +2,14 @@ import React, {Component} from 'react'
 import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import {addToCart} from '../../AC/order';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 import './productCard.css';
-import Popup from "reactjs-popup";
 
 class ProductCard extends Component {
-
+    constructor(props){
+        super(props);
+        this.handleAddToCart = this.handleAddToCart.bind(this)
+    }
     handleAddToCart = () => {
         console.log('');
         const {name, price, _id, image, info, addToCart} = this.props;
@@ -17,15 +20,16 @@ class ProductCard extends Component {
             image,
             info,
         };
+        swal({
+            title: "Item Added!",
+            icon: "success",
+            button: "Ok!",
+          });
         addToCart(itemInfo);
- 
-        window.alert('Item Added to the Cart');
-       
-        }
+    }
 
     render() {
         const {name, price, _id, image, info} = this.props;
-
         console.log (name, price, image, info);
 
         return (
@@ -46,9 +50,7 @@ class ProductCard extends Component {
         </Card.Content>
         </div>
   </Card>
-  
     )}
-    
 }
 
 export default connect(null, {addToCart}) (ProductCard);

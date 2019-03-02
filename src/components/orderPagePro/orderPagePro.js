@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {removeFromCart, setContact}  from '../../AC/order';
 import './orderLisrPro.css';
 import {callTelegram} from '../../AC/telegramSender';
+import swal from 'sweetalert';
 
 class OrderPagePro extends Component {
 
@@ -11,6 +12,12 @@ handleRemove = (item) => {
     const {removeFromCart} = this.props;
     console.log('remove ' + item.name + item.price );
     removeFromCart(item._id) 
+
+    swal({
+        title: "Item Removed!",
+        icon: "info",
+        button: "Ok!",
+      });
 }
 
 getTotalPrice () {
@@ -46,7 +53,11 @@ handleTelegaSendPost = ()=> {
     const {callTelegram} = this.props;
     callTelegram({text: `Order subtotal: ${JSON.stringify(this.getTotalPrice())}$, Customer contact: ${this.props.contacts}`});
 
-    window.alert('Thanks, our Manager will contact with You')
+    swal({
+        title: "Your order has been accepted!",
+        icon: "success",
+        button: "Ok!",
+      });
   }
 
   updateInputValue(evt) {

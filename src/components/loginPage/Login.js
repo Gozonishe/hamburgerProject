@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom';
 import './Login.css';
 
 export default class Login extends Component{
+    onLogin = () => {
+      alert('Under Construction!')
+    }
     render(){
         return(
           <div id='login-background'>
@@ -32,10 +35,10 @@ export default class Login extends Component{
                       type='password'
                     />
         
-                    <Button color='teal' fluid size='large'>
+                    <Button color='teal' fluid size='large' onClick={this.onLogin}>
                       Login
                     </Button><br/>
-                    <Button color='teal' fluid size='large' href='/admin'>
+                    <Button color='teal' fluid size='large' href='/admin' >
                       Admin
                     </Button>
                   </Segment>

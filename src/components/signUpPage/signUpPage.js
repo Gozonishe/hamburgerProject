@@ -3,6 +3,9 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import './signUpPage.css';
 
 export default class SignUp extends Component{
+  onRegister = () =>{
+    alert('Under Construction!')
+  }
     render(){
         return(
             <div className='sign-up-form'>
@@ -32,7 +35,7 @@ export default class SignUp extends Component{
                       type='password'
                     />
         
-                    <Button color='teal' fluid size='large'>
+                    <Button color='teal' fluid size='large' onClick={this.onRegister}>
                       Register
                     </Button>
                   </Segment>
