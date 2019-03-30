@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import './shopPageRedux.css';
 import ProductListRedux from '../productList/productListRedux';
 import { connect } from 'react-redux';
-import './shopPageRedux.css';
+import ItemsFilter from '../itemsFilter/itemsFilter';
 import Alert from './countdownAlert';
 
 class ShopPageRedux extends Component {
@@ -17,10 +18,13 @@ class ShopPageRedux extends Component {
 
     return (
         <div className='shop_page' >
+            <span className='filter'>
             <br/>
-            <h2 id = 'topPlace'>Number of Items: {count}</h2>
+                <ItemsFilter/>
+                <h2 id = 'topPlace'>Number of Items: {count}</h2>
+            </span>
             <h1 id = 'countdown'>{this.getCountdown()}</h1>
-            <ProductListRedux/>
+                <ProductListRedux/>
             <p><a href = "#topPlace" >To the top</a></p>
         </div>
     );

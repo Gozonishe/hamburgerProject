@@ -28,6 +28,10 @@
     background-size: cover;
 }
 
+#formatInfo {
+    opacity: 0.7;
+}
+
 #subtotal {
     margin-left: auto;
     margin-right: auto;
@@ -80,6 +84,10 @@ h2{
 
 #subtotalHeader{
     text-shadow: -1px 0 rgb(250, 249, 249), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 254, 254), 0 -1px rgb(253, 253, 253);
+}
+
+#submitButton {
+    padding: 13px;
 }
 
 @media (max-width:768px) {

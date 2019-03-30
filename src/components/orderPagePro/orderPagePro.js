@@ -98,7 +98,7 @@ render() {
                                 </Form.Group>
                             </Form>
                         </div>
-                    <h3>*in the format: 999-999-99-99</h3>
+                    <h3 id='formatInfo'>*in the format: 999-999-99-99</h3>
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
                 </div>  
         </div>
