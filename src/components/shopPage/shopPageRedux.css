@@ -1,12 +1,4 @@
 p{
-    /* font-size: 5ch;
-    text-align: center;
-    border: 3px solid #75bbf5;
-    color: #75bb34;
-    /* background-image: url('https://www.stihiya-shop.by/upload/iblock/106/GOODBOARDS%20FLASH%20LONG%20NOSE%20ROCKER%20BLUE.jpg'); */
-    /* font-family: auto;
-    margin-top: 10ch; */ 
-
     font-weight: 400;
     height: 6ch;
     text-align: right;  
@@ -16,7 +8,12 @@ p{
 }
 
 .shop_page{
-    background-image: url('https://orig00.deviantart.net/6043/f/2015/124/6/7/snow_ground_wallpaper_by_paintevil-d8kivsb.png');
+    background-image: url('http://www.freeoboi.ru/images/590785319.jpg');
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #topPlace{

@@ -23,7 +23,7 @@ class Alert extends Component {
     };
   return(
     <Countdown
-    date={Date.now() + 7000}
+    date={Date.now() + 5000}
     renderer={renderer}
   />
   )}

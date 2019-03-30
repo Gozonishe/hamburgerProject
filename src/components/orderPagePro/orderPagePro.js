@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Input, Image, Button, Form, Item, Icon } from 'semantic-ui-react';
+import { Card, Image, Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import {removeFromCart, setContact}  from '../../AC/order';
 import './orderLisrPro.css';
@@ -7,6 +7,9 @@ import {callTelegram} from '../../AC/telegramSender';
 import swal from 'sweetalert';
 
 class OrderPagePro extends Component {
+    state = {
+        orderInfo: ''
+    }
 
 handleRemove = (item) => {
     const {removeFromCart} = this.props;
@@ -52,17 +55,24 @@ getList(){
 handleTelegaSendPost = ()=> {
     const {callTelegram} = this.props;
     callTelegram({text: `Order subtotal: ${JSON.stringify(this.getTotalPrice())}$, Customer contact: ${this.props.contacts}`});
-
-    swal({
-        title: "Your order has been accepted!",
-        icon: "success",
-        button: "Ok!",
-      });
   }
 
-  updateInputValue(evt) {
+handleSubmit = () => {
+    this.setState({
+    orderInfo: this.props.contacts
+    })
+
+    this.state.orderInfo === undefined ||  this.state.orderInfo === null ? 
+    console.log('NEIN NICTH NO DATA') : swal({
+                                        title: "Your order has been accepted!",
+                                        icon: "success",
+                                        button: "Ok!",
+                                        })      
+}
+
+updateInputValue(evt) {
     this.props.setContact(evt.target.value)
-  }
+}
  
 render() {
     const {count} = this.props;
@@ -71,13 +81,25 @@ render() {
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div id = 'subtotal'> 
                     <h1 id='subtotalHeader'>Subtotal ({count} items): $<u>{this.getTotalPrice()} </u></h1>
-                    <h2><b>Give us your email or phone:</b></h2>
-                    <Input id='contactInput' icon={<Icon name='truck' inverted circular link />} type="text" onChange={evt => this.updateInputValue(evt)} placeholder = 'Phone number'size="20"/><br/>
-                    <h2>and</h2>
-                    <Button id = 'proceedButton' color = 'teal' onClick={this.handleTelegaSendPost}>Proceed to checkout</Button> 
-                    <br/>or<br/>    
+                    <h2><b>Give us your phone number*:</b></h2>
+                        <div className='contactInfo'>
+                            <Form onSubmit={this.handleSubmit} >
+                                <Form.Group id='formItems'>
+                                    <Form.Input 
+                                        placeholder='(XXX)-XXX-XX-XX' 
+                                        name='name'
+                                        pattern='([0-9]{3}[-][0-9]{3}[-][0-9]{2}[-][0-9]{2})'
+                                        required
+                                        type='text'
+                                        maxLength='13'
+                                        onChange={evt => this.updateInputValue(evt)}    
+                                        id='contactInput'/> 
+                                    <Form.Button onClick={this.handleTelegaSendPost} color='teal' content='Proceed to checkout' id='submitButton'/>
+                                </Form.Group>
+                            </Form>
+                        </div>
+                    <h3>*in the format: 999-999-99-99</h3>
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
-                    
                 </div>  
         </div>
     );
