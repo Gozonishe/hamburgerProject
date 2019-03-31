@@ -38,19 +38,18 @@ class ShopPageRedux extends Component {
                 <ItemsFilter filterText={this.state.filterText}
                              filterUpdate={this.filterUpdate}
                 />
-                <h2 id = 'topPlace'>Number of Items: {count}</h2>
+                {/* <h2 id = 'topPlace'>Number of Items: {count}</h2> */}
             </span>
             <h1 id = 'countdown'>{this.getCountdown()}</h1>
                 <ProductListRedux filterText={this.state.filterText}/>
             <p><a href = "#topPlace" >To the top</a></p>
         </div>
     );
-  }productListRedux
+  }
 }
 
 export default connect((state) => {
     return {
         count: state.myProductsData.count,
-        products: state.myProductsData.products,
     }
 }, {getProducts})  (ShopPageRedux);
