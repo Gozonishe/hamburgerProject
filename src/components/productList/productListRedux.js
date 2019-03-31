@@ -5,20 +5,23 @@ import ProductCard from '../productCard/productCard';
 import "./productListRedux.css";
 
 class ProductListRedux extends Component {
-    constructor(props) {
-        super(props);  
-        this.state = {};
-      }
+  constructor(props) {
+      super(props);  
+      this.state = {
+      };
+    }
 
   componentDidMount() {
         const {getProducts} = this.props;
         getProducts();
   }    
 
-
   getList() {
-    const {products} = this.props;
-    return products.map(product => <ProductCard key={product._id} {...product}/>)
+    const {products, filterText} = this.props;
+    
+    return products
+      .filter(product => product.name.toString().toLowerCase().indexOf(filterText) !== -1 || product.info.toString().toLowerCase().indexOf(filterText) !== -1)
+      .map(product => <ProductCard key={product._id} {...product}/>)
   }
 
   render() {

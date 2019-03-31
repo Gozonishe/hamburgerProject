@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import {doIncrement, doUmenshit} from '../../AC/index';
 import {getProducts} from '../../AC/products';
@@ -24,11 +23,6 @@ class MainPage extends Component {
 
     return (
         <div className='mainPage' id='mainPage' >
-            {/* <h1></h1>
-            <h1 className='shopName'>Snow Strorm Snowboarding Store</h1> */}
-            {/* <Button onClick={this.handleIncrement}>Do Increment</Button>
-            <Button onClick={this.handleReduce}>Do Reduce</Button> */}
-            {/* <h1>{count}</h1> */}
             <SimpleSlider/>
         </div>
     );

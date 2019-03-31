@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {getProducts} from '../../AC/products';
-import ProductCard from '../productCard/productCard';
-import { Button } from 'semantic-ui-react';
-
-import axios from 'axios';
 
 class OrderListPro extends Component {
     constructor(props) {
@@ -13,7 +9,6 @@ class OrderListPro extends Component {
       }
 
   componentDidMount() {
-
   }    
 
     render() {
