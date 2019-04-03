@@ -103,7 +103,7 @@ h2{
             flex-direction: column-reverse;
             flex-wrap: nowrap;
             justify-content: flex-end;
-            align-items: flex-start;
+            align-items: center;
             align-content: stretch;
         }
         #subtotal {
