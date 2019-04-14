@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, Image} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { getItemsFromLocalStorage } from '../../AC/order';
@@ -29,12 +29,12 @@ class Header extends Component {
   
       return (
         <div className='header'>
-        <div className='smallHeader' >
-        <div className='toolbar__toggle-button'>
-          <DrawerToggleButton click={this.props.drawerClickHandler}/>
-        </div>
-        <div className='toolbar__logo'><img src='/logotext.png'/></div>
-        </div>
+          <div className='smallHeader' >
+            <div className='toolbar__toggle-button'>
+              <DrawerToggleButton click={this.props.drawerClickHandler}/>
+            </div>
+              <div className='toolbar__logo'><img src='/logotext.png' alt='logo'/></div>
+          </div>
         <div className='toolbar__navigation-items'>
         <Menu fixed='enum top' stackable>
           <Link to='/'>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Icon, Image, Button } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 import {addToCart} from '../../AC/order';
 import { connect } from 'react-redux';
 import swal from 'sweetalert';

@@ -19,7 +19,7 @@ class MainPage extends Component {
    
   render() {
 
-    const {count} = this.props;
+    // const {count} = this.props;
 
     return (
         <div className='mainPage' id='mainPage' >

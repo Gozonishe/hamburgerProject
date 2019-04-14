@@ -7,6 +7,7 @@ export default (count = 0, action) => {
             return count + 1;
         case UMENSHAEM:
             return count - 1;
+        default: count = 0;
     }
 
     return count;

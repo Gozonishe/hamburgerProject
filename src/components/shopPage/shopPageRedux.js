@@ -29,7 +29,7 @@ class ShopPageRedux extends Component {
     }
 
     render() {
-    const {count} = this.props;
+    // const {count} = this.props;
 
     return (
         <div className='shop_page' >

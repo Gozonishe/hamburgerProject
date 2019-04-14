@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Input, Image, Button, Form } from 'semantic-ui-react';
+import { Card, Input, Image, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { postProducts } from '../../../AC/products';
 import '../adminPage.css';
