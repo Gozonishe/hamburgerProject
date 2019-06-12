@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Card, Image, Button, Form } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import InputMask from 'react-input-mask';
+import swal from 'sweetalert';
+
 import {removeFromCart, setContact}  from '../../AC/order';
 import './orderLisrPro.css';
 import {callTelegram} from '../../AC/telegramSender';
-import swal from 'sweetalert';
+
 
 class OrderPagePro extends Component {
     state = {
@@ -63,7 +66,7 @@ handleSubmit = () => {
     })
 
     this.state.orderInfo === undefined ||  this.state.orderInfo === null ? 
-    console.log('NEIN NICTH NO DATA') : swal({
+    console.log('NO DATA') : swal({
                                         title: "Your order has been accepted!",
                                         icon: "success",
                                         button: "Ok!",
@@ -81,24 +84,26 @@ render() {
             <h1 className = 'cartList'>{this.getList()}</h1>
                 <div id = 'subtotal'> 
                     <h1 id='subtotalHeader'>Subtotal ({count} items): $<u>{this.getTotalPrice()} </u></h1>
-                    <h2><b>Give us your phone number*:</b></h2>
+                    <h2><b>Your contact phone number:</b></h2>
                         <div className='contactInfo'>
                             <Form onSubmit={this.handleSubmit} >
                                 <Form.Group id='formItems'>
-                                    <Form.Input 
-                                        placeholder='(XXX)-XXX-XX-XX' 
-                                        name='name'
-                                        pattern='([0-9]{3}[-][0-9]{3}[-][0-9]{2}[-][0-9]{2})'
-                                        required
-                                        type='text'
-                                        maxLength='13'
-                                        onChange={evt => this.updateInputValue(evt)}    
-                                        id='contactInput'/> 
+                                    <Form.Input>
+                                        <InputMask
+                                            placeholder='Phone number' 
+                                            name='name'
+                                            id='contactInput'
+                                            onChange={evt => this.updateInputValue(evt)}
+                                            type='text'
+                                            required
+                                            mask="+7\ (999) 999-9999"
+                                            maskChar="_"
+                                        />
+                                    </Form.Input>
                                     <Form.Button onClick={this.handleTelegaSendPost} color='teal' content='Proceed to checkout' id='submitButton'/>
                                 </Form.Group>
                             </Form>
                         </div>
-                    <h2 id='formatInfo'>*in the format: 999-999-99-99</h2>
                     <a href = '/signup'><strong>Sign in to turn on 1-Click ordering.</strong></a>
                 </div>  
         </div>
